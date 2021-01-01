@@ -4,12 +4,13 @@ function getValues() {
 	interes = parseFloat(document.getElementById('interes').value);
 	tiempo = parseFloat(document.getElementById('tiempo').value);
 	monto = parseFloat(document.getElementById('monto').value);
+	mes = 1;
 	mainLogic(monto);
 	function mainLogic (cantidad) {
 		newMonto = ((cantidad * (interes/100)) + cantidad);
 	
 		let items = document.createElement('h1');
-		let contenidoTexto = document.createTextNode('$' + newMonto.toFixed(3));
+		let contenidoTexto = document.createTextNode(mes + '-. ' + '$' + newMonto.toFixed(3));
 		
 		items.appendChild(contenidoTexto);
 		mainSection.appendChild(items);
@@ -17,5 +18,6 @@ function getValues() {
 	
 	for (i = 1; i <= tiempo; i++) {
 		mainLogic(newMonto);
+		mes++;
 	}
 }
