@@ -4,7 +4,6 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Practica</title>
-
 		<style>
 			body {
 				width: 100vw;
@@ -57,9 +56,11 @@
 				border: solid 1px gray;
 			}
 
-			.main-section p {
+			.main-section h1 {
 				display: block;
-				font-size: ;
+				font-size: 12px;
+				font-weight: 400;
+				font-family: tahoma ;
 			}
 		</style>
 	</head>
@@ -90,13 +91,13 @@
 				/>
 				<input
 					class="activator"
-					onclick="shotAlert()"
-					type="submit"
+					onclick="getValues()"
+					type="button"
 					value="Comenzar"
 				/>
 			</form>
-			<section class="main-section"></section>
+			<section class="main-section" id="main-section"></section>
 		</div>
+		<script src="./index.js"></script>
 	</body>
-	<script src="./index.js"></script>
 </html>

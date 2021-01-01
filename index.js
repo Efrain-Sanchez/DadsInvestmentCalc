@@ -1,28 +1,21 @@
-const mainSection = document.querySelector(".main-section");
-const p1 = document.querySelector("#p");
-let month = 2;
-// let i = 2;
+let mainSection = document.getElementById('main-section');
 
-function shotAlert() {
-	let time = parseInt(document.querySelector("#tiempo").value, Number);
-	const interesEnPorcentaje = parseFloat(
-		document.querySelector("#interes").value,
-		Number
-	);
-	const interes = (interesEnPorcentaje / 100).toFixed(3);
-	let monto = parseFloat(document.querySelector("#monto").value, Number);
-	const getIncome = (monto, interes) => {
-		return (newMonto = monto * interes + monto);
+function getValues() {
+	interes = parseFloat(document.getElementById('interes').value);
+	tiempo = parseFloat(document.getElementById('tiempo').value);
+	monto = parseFloat(document.getElementById('monto').value);
+	mainLogic(monto);
+	function mainLogic (cantidad) {
+		newMonto = ((cantidad * (interes/100)) + cantidad);
+	
+		let items = document.createElement('h1');
+		let contenidoTexto = document.createTextNode('$' + newMonto.toFixed(3));
+		
+		items.appendChild(contenidoTexto);
+		mainSection.appendChild(items);
 	};
-	mainSection.innerHTML = "Month 1 $" + getIncome(monto, interes);
-
-	for (i = 2; i <= time; i++, month++) {
-		const pTag = document.createElement("p");
-		mainSection.appendChild(pTag);
-		const content = document.createTextNode(
-			` Month ${month} $${getIncome(newMonto, interes)}`
-		);
-		pTag.appendChild(content);
+	
+	for (i = 1; i <= tiempo; i++) {
+		mainLogic(newMonto);
 	}
-	debugger;
 }
