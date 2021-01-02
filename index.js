@@ -9,7 +9,7 @@ function getValues() {
 		newMonto = ((cantidad * (interes/100)) + cantidad);
 	
 		let items = document.createElement('li');
-		let contenidoTexto = document.createTextNode('$' + newMonto.toFixed(3));
+		let contenidoTexto = document.createTextNode('$		' + newMonto.toFixed(3));
 		
 		items.appendChild(contenidoTexto);
 		mainSection.appendChild(items);
