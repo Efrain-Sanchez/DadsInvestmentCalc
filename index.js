@@ -8,12 +8,13 @@ function getValues() {
 	function mainLogic (cantidad) {
 		newMonto = ((cantidad * (interes/100)) + cantidad);
 	
-		let items = document.createElement('h1');
-		let contenidoTexto = document.createTextNode('-. ' + '$' + newMonto.toFixed(3));
+		let items = document.createElement('li');
+		let contenidoTexto = document.createTextNode('$' + newMonto.toFixed(3));
 		
 		items.appendChild(contenidoTexto);
 		mainSection.appendChild(items);
 	};
+	
 	for (i = 1; i < tiempo; i++) {
 		mainLogic(newMonto);
 	}
